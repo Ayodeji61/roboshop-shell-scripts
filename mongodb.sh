@@ -16,9 +16,9 @@ curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongo
 echo Status = $?
 
 cd /tmp
-echo "Extracting Schema File"
+echo "Extract Schema File"
 unzip mongodb.zip &>>$LOG_FILE
-echo Status = $?
+
 
 cd mongodb-main
 echo "Loading Catalogue Service Schema"
