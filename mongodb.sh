@@ -11,6 +11,26 @@ echo "Update MongoDB Listen Address"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 echo Status = $?
 
+echo "Downloading MongoDB Schema"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+echo Status = $?
+
+cd /tmp
+
+echo "Extracting Schema File"
+unzip mongodb.zip
+echo Status = $?
+
+cd mongodb-main
+
+echo "Loading Catalogue Service Schema"
+mongo < catalogue.js
+echo Status = $?
+echo "Loading Users Service Schema"
+mongo < users.js
+echo Status = $?
+
+
 echo "Starting MongoDB Service"
 systemctl enable mongod &>>$LOG_FILE
 systemctl restart mongod &>>$LOG_FILE
