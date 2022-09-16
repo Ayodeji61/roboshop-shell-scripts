@@ -18,12 +18,14 @@ echo Status = $?
 cd /tmp
 echo "Extract Schema File"
 unzip mongodb.zip &>>$LOG_FILE
+echo Status = $?
 
 
 cd mongodb-main
 echo "Loading Catalogue Service Schema"
 mongo < catalogue.js &>>$LOG_FILE
 echo Status = $?
+
 echo "Loading Users Service Schema"
 mongo < users.js &>>$LOG_FILE
 echo Status = $?
