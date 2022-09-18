@@ -40,7 +40,7 @@ NODEJS() {
   rm -rf ${COMPONENT} &>>${LOG_FILE}
   StatusCheck $?
 
-  echo "Extract User Application Code"
+  echo "Extract ${COMPONENT} Application Code"
   unzip /tmp/${COMPONENT}.zip &>>${LOG_FILE}
   StatusCheck $?
 
