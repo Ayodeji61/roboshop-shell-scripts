@@ -9,7 +9,7 @@ fi
 echo "Downloading NodeJS Repo"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
-  echo -e Status = "\e[35mSUCCESS\e[0m"
+  echo -e Status = "\e[32mSUCCESS\e[0m"
 else
   echo -e Status = "\e[31mFAILURE\e[0m"
   exit 1
