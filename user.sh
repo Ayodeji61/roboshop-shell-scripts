@@ -19,7 +19,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Download User Application Code"
-curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/user/archive/main.zip" &>>${LOG_FILE}
+curl -s -L -o /tmp/user.zip "https://github.com/roboshop-devops-project/user/archive/main.zip" &>>${LOG_FILE}
 StatusCheck $?
 
 cd /home/roboshop
