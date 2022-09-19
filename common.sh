@@ -41,7 +41,7 @@ NODEJS() {
   StatusCheck $?
 
   echo "Extract ${COMPONENT} Application Code"
-  unzip /tmp/${COMPONENT}.zip &>>${LOG_FILE}
+  unzip /tmp/${COMPONENT}.zip -y &>>${LOG_FILE}
   StatusCheck $?
 
 
