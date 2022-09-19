@@ -11,7 +11,7 @@ dnf module disable mysql -y &>>$LOG_FILE
 StatusCheck $?
 
 
-echo "Start MySQl Service"
+echo "Install MySQl Service"
 yum install mysql-community-server -y &>>$LOG_FILE
 StatusCheck $?
 
@@ -40,7 +40,6 @@ if [ $? -eq 0 ]; then
   echo "uninstall plugin validate_password;" | mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD} &>>LOG_FILE
   StatusCheck $?
 fi
-
 
 
 echo "Downloading the Schema"
