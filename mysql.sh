@@ -39,7 +39,7 @@ if [ $? -ne 0 ]; then
   StatusCheck $?
 fi
 
-echo 'show plugin' | mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD} 2>>/dev/null | grep validate_password &>>$LOG_FILE
+echo 'show plugin' | mysql -u root -p${ROBOSHOP_MYSQL_PASSWORD} 2>>/dev/null | grep validate_password &>>$LOG_FILE
 if [ $? -eq 0 ]; then
   echo "Uninstall Password Validation Plugin"
   echo "uninstall plugin validate_password;" | mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD} &>>$LOG_FILE
