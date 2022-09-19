@@ -11,13 +11,17 @@ StatusCheck $?
 
 APP_PREREQ
 
-cd /${COMPONENT}
 
+echo "Go into Initial Dispatch"
 go mod init dispatch &>>${LOG_FILE}
 StatusCheck $?
 
+echo "Go Get"
 go get &>>${LOG_FILE}
 StatusCheck $?
 
+echo "Build"
 go build &>>${LOG_FILE}
 StatusCheck $?
+
+SYSTEMD_SETUP
