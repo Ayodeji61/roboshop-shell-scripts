@@ -95,7 +95,7 @@ StatusCheck $?
 SYSTEMD_SETUP
 }
 
-PHTHON() {
+PYTHON() {
   echo "Install python 3"
   yum install python36 gcc python3-devel -y &>>${LOG_FILE}
   StatusCheck $?
