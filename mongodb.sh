@@ -25,12 +25,13 @@ StatusCheck $?
 
 
 cd mongodb-main
+
 echo "Loading Catalogue Service Schema"
-mongo < catalogue.js &>>$LOG_FILE
+mongo <catalogue.js &>>$LOG_FILE
 StatusCheck $?
 
 echo "Loading Users Service Schema"
-mongo < users.js &>>$LOG_FILE
+mongo <users.js &>>$LOG_FILE
 StatusCheck $?
 
 
