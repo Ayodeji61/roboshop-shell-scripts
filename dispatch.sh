@@ -13,6 +13,11 @@ APP_PREREQ
 
 cd /${COMPONENT}
 
-go mod init dispatch
-go get
-go build
+go mod init dispatch &>>${LOG_FILE}
+StatusCheck $?
+
+go get &>>${LOG_FILE}
+StatusCheck $?
+
+go build &>>${LOG_FILE}
+StatusCheck $?
