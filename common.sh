@@ -37,11 +37,11 @@ NODEJS() {
   cd /home/roboshop
 
   echo "Cleaning Old App Content"
-  rm -rf ${COMPONENT} &>>${LOG_FILE}
+  rm -rf * ${COMPONENT} &>>${LOG_FILE}
   StatusCheck $?
 
   echo "Extract ${COMPONENT} Application Code"
-  unzip /tmp/${COMPONENT}.zip y &>>${LOG_FILE}
+  unzip /tmp/${COMPONENT}.zip  &>>${LOG_FILE}
   StatusCheck $?
 
 
