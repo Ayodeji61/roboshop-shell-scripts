@@ -8,7 +8,7 @@ StatusCheck $?
 
 echo "Disable MySQl Default Module to Enable 5.7 MySQL"
 dnf module disable mysql -y &>>$LOG_FILE
-$StatusCheck $?
+StatusCheck $?
 
 
 echo "Start MySQl Service"
