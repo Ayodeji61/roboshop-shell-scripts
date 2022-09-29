@@ -4,9 +4,6 @@ yum install -y mongodb-org
 systemctl enable mongod
 systemctl start mongod
 
-Update Listen IP address from 127.0.0.1 to 0.0.0.0 in config file
-Config file: `/etc/mongod.conf`
-
 sed -e 's/127.0.0.1/0.0.0.0'/etc/mongd.conf
 
 
