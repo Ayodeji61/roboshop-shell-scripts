@@ -10,7 +10,7 @@ echo Downloading Nginx Web Content
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG_FILE
 StatusCheck $?
 
- cd /usr/share/nginx/html
+cd /usr/share/nginx/html
 
 echo Removing Old Web Content
 rm -rf * &>>$LOG_FILE
