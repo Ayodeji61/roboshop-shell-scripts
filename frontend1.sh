@@ -1,18 +1,18 @@
+LOG_FILE=/tmp/frontend
+
+yum install nginx -y &>>${LOG_FILE}
+systemctl enable nginx &>>${LOG_FILE}
+systemctl start nginx &>>${LOG_FILE}
 
 
-yum install nginx -y
-systemctl enable nginx
-systemctl start nginx
-
-
-curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>${LOG_FILE}
 
 
 cd /usr/share/nginx/html
-rm -rf *
-unzip /tmp/frontend.zip
-mv frontend-main/static/* .
-mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
+rm -rf * &>>${LOG_FILE}
+unzip /tmp/frontend.zip &>>${LOG_FILE}
+mv frontend-main/static/* . &>>${LOG_FILE}
+mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>${LOG_FILE}
 
 
-systemctl restart nginx
+systemctl restart nginx &>>${LOG_FILE}
