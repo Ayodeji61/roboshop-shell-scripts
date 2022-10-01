@@ -2,6 +2,11 @@ LOG_FILE=/tmp/frontend
 
 echo "Installing Nginx"
 yum install nginx -y &>>${LOG_FILE}
+if [ $? -eq 0 ]; then
+  echo "SUCCESS"
+  else
+  echo "FAILURE"
+fi
 
 echo "Enable Nginx"
 systemctl enable nginx &>>${LOG_FILE}
