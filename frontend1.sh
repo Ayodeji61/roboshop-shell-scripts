@@ -1,7 +1,7 @@
 LOG_FILE=/tmp/frontend
 
 echo "Installing Nginx"
-yum install nginx -y &>>$LOG_FILE
+yum install ngin -y &>>$LOG_FILE
 if [ $? -eq 0 ]; then
   echo STATUS = "SUCCESS"
   else
