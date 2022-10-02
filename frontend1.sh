@@ -3,9 +3,10 @@ LOG_FILE=/tmp/frontend
 echo "Installing Nginx"
 yum install nginx -y &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
-  echo "SUCCESS"
+  echo Status="SUCCESS"
   else
-  echo "FAILURE"
+  echo Status="FAILURE"
+  exit 1
 fi
 
 echo "Enable Nginx"
