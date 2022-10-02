@@ -3,7 +3,7 @@ LOG_FILE=/tmp/frontend1
 source code.sh
 
 echo "Installing Nginx"
-yum install ngin -y &>>$LOG_FILE
+yum install nginx -y &>>$LOG_FILE
 StatusCheck $?
 
 
